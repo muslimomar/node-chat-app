@@ -8,10 +8,13 @@ const port = process.env.PORT || 3000;
 var app = express();
 
 app.use(express.static(publicPath));
+app.use((req,res,next) => {
+  
+});
 
 app.get('/about', (req,res) => {
-  var newReq = JSON.stringify(res,undefined,2);
-  res.send({newReq});
+
+
 
 });
 
