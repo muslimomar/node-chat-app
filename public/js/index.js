@@ -5,16 +5,12 @@ socket.on('connect', function()  {
 
 
   socket.on('newMessage', (msg) => {
-    document.getElementById("email-p")
-    .innerHTML = JSON.stringify(msg,undefined,2);
-
+    // document.getElementById("email-p")
+    // .innerHTML = JSON.stringify(msg,undefined,2);
+    console.log(msg);
   });
 
 
-  socket.emit('createMessage', {
-    from: 'Client',
-    text: 'Whatting happen yaar?'
-  });
 
 
 
