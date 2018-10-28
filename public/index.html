@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/css/styles.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body class="chat">
@@ -15,7 +16,7 @@
   </div>
 
   <div class="chat__main">
-    <ol id="messages" class="chat__messages"></ol>
+    <ol id="messages" class="chat__messages list-group"></ol>
 
     <div class="chat__footer">
       <form id="message-form">
@@ -26,9 +27,40 @@
     </div>
   </div>
 
+  <script id="message-template" type="text/template">
+    <li  class="list-group-item message">
+      <div class="message_title">
+        <h4>{{from}}</h4>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message_body">
+        <p>{{text}}</p>
+      </div>
+    </li>
+  </script>
+
+  <script id="location-message-template" type="text/template">
+    <li  class="list-group-item message">
+      <div class="message_title">
+        <h4>{{from}}</h4>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message_body">
+        <p>
+          <a href="{{url}}" target="_blank">My Current Location</a>
+        </p>
+      </div>
+    </li>
+  </script>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/libs/jquery-3.3.1.min.js"></script>
   <script src="/js/index.js"></script>
+  <script src="/js/libs/moment.js"></script>
+  <script src="/js/libs/mustache.js"></script>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
